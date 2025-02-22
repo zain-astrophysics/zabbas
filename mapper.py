@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 import re
 import string
@@ -58,20 +60,15 @@ def clean_text(text):
     text = text.strip()
     return ' '.join(remove_stopwords(text))
 
-
 # Mapper function
 def mapper(argv):
-    output = []
     president_name = os.environ['mapreduce_map_input_file'] #*****
     for line in sys.stdin.readline():
         word_valences = valence(line)
         for word, word_valence in word_valences:
-            print(f"{president_name}\t{word_valence}")  # Emit president and word valence                        
-            output.append((president_name, word_valence))
-    except EOFError as error:
-        return None
-        
+            line = f"{president_name}\t{word_valence}"
+            
 
 # This would be invoked by the Hadoop job framework
 if __name__ == "__main__":
-    mapper()
+    mapper(sys.argv)
