@@ -62,7 +62,8 @@ def clean_text(text):
 
 # Mapper function
 def mapper(argv):
-    president_name = os.environ['mapreduce_map_input_file'] #*****
+    #president_name = os.environ['mapreduce_map_input_file'] #*****
+    president_name = 'adams'
     for line in sys.stdin.readline():
         word_valences = valence(line)
         for word, word_valence in word_valences:
