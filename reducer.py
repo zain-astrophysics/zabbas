@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 def reducer():
 
     current_president = None
