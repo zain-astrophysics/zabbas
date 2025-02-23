@@ -62,13 +62,12 @@ def clean_text(text):
 
 # Mapper function
 def mapper(argv):
-    #president_name = os.environ['mapreduce_map_input_file'] #*****
-    president_name = 'adams'
-    for line in sys.stdin.readline():
+    filename = os.environ['mapreduce_map_input_file'] #*****
+    president_name = filename.split('_')[0]
+    for line in sys.stdin:
         word_valences = valence(line)
         for word, word_valence in word_valences:
-            print(f"{president_name}\t{word_valence}")
-            
+            print(president_name + "\t" + str(word_valence)            
 
 # This would be invoked by the Hadoop job framework
 if __name__ == "__main__":
