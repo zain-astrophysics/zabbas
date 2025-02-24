@@ -20,9 +20,9 @@ for line in sys.stdin:
                print(f"{current_president}\t{avg_valence}")
 
             # Update the current president
-          current_president = president_name
-          total_valence = word_valence
-          word_count = 1
+         current_president = president_name
+         total_valence = word_valence
+         word_count = 1
 if current_president:
       avg_valence = total_valence / word_count
       print(f"{current_president}\t{avg_valence}") if word_count > 0 else 0
