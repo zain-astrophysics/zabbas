@@ -67,7 +67,7 @@ def mapper(argv):
     for line in sys.stdin:
         word_valences = valence(line)
         for word, word_valence in word_valences:
-            print(president_name + "\t" + str(word_valence)            
+            print(president_name + "\t" + str(word_valence))            
 
 # This would be invoked by the Hadoop job framework
 if __name__ == "__main__":
