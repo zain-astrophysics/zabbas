@@ -17,9 +17,9 @@ stopwords = list(set(stopwords_list.decode().splitlines()))
 def calc_valence(text):
     TEXT = text.split()
     word_valences = []
-    print(TEXT)
+    #print(TEXT)
     for word_split in TEXT:
-        print(word_split)
+        #print(word_split)
         word_val = afinn.get(word_split, 0)
         word_valences.append((word_split, word_val))
     return word_valences
