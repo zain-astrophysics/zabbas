@@ -2,7 +2,6 @@
 
 import sys
 
-
 for line in sys.stdin:
   if line.strip():  # Skip empty lines
         total_requests += 1
