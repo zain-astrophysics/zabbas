@@ -2,6 +2,14 @@
 
 import sys
 
+
+
+# Initialize counters
+GET_count = 0
+PUT_count = 0
+POST_count = 0
+total_requests = 0
+
 for line in sys.stdin:
   if line.strip():  # Skip empty lines
         total_requests += 1
