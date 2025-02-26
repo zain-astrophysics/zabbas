@@ -15,7 +15,9 @@ parser = LogParser('%h %l %u %t "%r" %>s %b "%{Referer}i" "%{User-Agent}i" "%{Re
 
 def mapper(argv):
    for line in sys.stdin:
-      print(line)            
+      if line.strip():
+         line = line.splitlines()
+         print(line)            
 
 # This would be invoked by the Hadoop job framework
 if __name__ == "__main__":
