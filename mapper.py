@@ -57,6 +57,7 @@ def clean_text(text):
     text = re.sub(r'[%s]' % re.escape(string.punctuation), ' ', text)  # Remove punctuation
     text = re.sub(r'[\d]+', ' ', text)  # Remove numbers
     text = re.sub(r'\s+', ' ', text)  # Remove extra spaces
+    text = re.sub(r'[^\x00-\x7F]+', ' ', text)
     text = text.strip()
     return ' '.join(remove_stopwords(text))
 
